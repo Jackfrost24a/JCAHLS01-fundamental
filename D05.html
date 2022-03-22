@@ -1,0 +1,64 @@
+<script>
+    let database =[
+    {
+        name: "Hoodie",
+        stock: 12,
+        price: 75000
+    },
+    {
+        name: "sepatu",
+        stock: 10,
+        price: 8000
+    }
+];
+    let konfirmasi = true;
+
+    const printData = () => {
+        return database.map((value, idx) => {
+            return `${idx + 1}. nama barang: ${value.name}, stock barang: ${value.stock}, harga barang: ${value.price}`
+        }).join("\n") //this way prefered
+
+
+       
+
+    }
+
+    while (konfirmasi) {
+        let menu = parseInt(prompt(`Menu data buah :
+    1. Lihat data
+    2. Tambah data
+    3. Hapus data
+    4. Edit data`))
+
+
+        if (menu == "1") {
+            alert(`List data :\n${printData()}`)
+
+        }
+        else if (menu == "2") {
+            let name = prompt("masukan data baru")
+            let stock = parseInt(prompt("masukan stock"))
+            let price = parseInt(prompt("masukan harga baru"))
+
+            database.push({name, price,stock})
+        }
+
+        else if (menu == "3") {
+            let no = parseInt(prompt(" Pilih Data yang akan dihapus"))
+            database.splice(no - 1, 1)
+
+        } else if (menu == "4") {
+            let no = parseInt(prompt(" Pilih Data yang akan dihapus"))
+            let name = prompt("masukan data baru")
+            let stock = parseInt(prompt("masukan stock"))
+            let price = parseInt(prompt("masukan harga baru"))
+            database[no - 1] = ({name,stock,price});
+        } else {
+            konfirmasi = false
+            alert("menu yang anda cari tidak ada ⚠")
+
+        }
+    } 
+
+
+</script>

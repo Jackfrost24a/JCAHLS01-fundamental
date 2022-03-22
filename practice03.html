@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing your shape</title>
+</head>
+<h1>Drawing Your Shape</h1>
+
+<body>
+    <label>Select Shape</label>
+    <select id="shapes">
+        <option value="Persegi">Persegi</option>
+        <option value="segitiga">segitiga</option>
+    </select>
+    <form id="test2">
+        <br>
+        <br>
+        size of shape:
+        <br>
+        <br>
+        <input type="number" name="txtnum1">
+        <button type="button" onClick="HandleGenerate()">Generate</button>
+
+    </form>
+    <div id="test">
+
+    </div>
+
+</body>
+<script>
+
+    const HandleGenerate = () => {
+        const val = document.querySelector('input').value
+        let select = document.getElementById("shapes").value;
+        console.log(select)
+        if (select == "Persegi") {
+            let sharp = ``
+            rows = val
+            for (let i = 1; i <= rows; i++) {
+                for (let j = 1; j <= rows; j++) {
+                    sharp += ` # `
+                } sharp += `<br>`
+            }
+            document.getElementById("test").innerHTML = sharp
+
+
+
+        } else {
+            let stars = ``
+            rows = val
+            for (let i = 1; i <= rows; i++) {
+                for (let j = 1; j <= i; j++) {
+                    stars += `*`
+                } stars += `<br>`
+            }
+            document.getElementById("test").innerHTML = stars
+
+        }
+        
+
+
+
+
+    }
+
+</script>
+
+</html>
+
+
+

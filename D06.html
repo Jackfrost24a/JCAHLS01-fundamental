@@ -1,0 +1,66 @@
+<script>
+    let database = [
+        {
+            name: "Kemeja",
+            stock: 12,
+            price: 70000
+        },
+        {
+            name: "Sepatu",
+            stock: 10,
+            price: 100000
+        },
+        {
+            name: "Topi",
+            stock: 5,
+            price: 10000
+        }
+    ];
+    let konfirmasi = true;
+    const printData = () => {
+        return database.map((value, idx) => {
+            return `${idx + 1}. nama barang: ${value.name}|| stock barang: ${value.stock}|| harga barang: ${value.price}`
+        }).join("\n") //this way prefered
+    }
+    while (konfirmasi) {
+        let menu = parseInt(prompt(`Menu data buah :
+    1. Lihat Stock
+    2. Beli Produk
+    3. Tambah Produk`
+        ))
+        if (menu == "1") {
+            alert(`List data :\n${printData()}`)
+        } else if (menu == "2") {
+            while (true) {
+                let sellIndex = parseInt(prompt(printData(database, " Pilih barang yang akan di beli")))
+                let { name, stock, price } = database[sellIndex - 1]
+                let stock2 = parseInt(prompt("masukan quantity anda: ")
+                );
+                if (stock2 > stock) {
+                    alert(`stock tidak mencukupi`)
+                }
+                else if (stock2 <= stock) {
+                    let bayar = prompt(`harga anda adalah: IDR ${stock2 * price}
+                                    input nominal anda:`)
+                    if (bayar < price) {
+                        alert(`uang tidak mencukupi`)
+                    }
+                    else if (bayar > price) {
+                        alert(`kembalian anda ${bayar - price}`)
+                        database[sellIndex - 1].stock = database[sellIndex - 1].stock - stock2
+                        break
+                    } else {
+                        alert(`terimakasih telah berbelanja`)
+                        database[sellIndex - 1].stock = database[sellIndex - 1].stock - stock2
+                        break
+                    }
+                }
+            }
+        } else if (menu == "3") {
+            let name = prompt("masukan data baru")
+            let stock = parseInt(prompt("masukan stock"))
+            let price = parseInt(prompt("masukan harga baru"))
+            database.push({ name, price, stock })
+        }
+    }
+</script>

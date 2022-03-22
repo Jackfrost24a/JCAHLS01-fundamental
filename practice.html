@@ -1,0 +1,62 @@
+<script>
+    let fruits = [
+        ["Apple", 10000, 5],
+        ["Grape", 15000, 7],
+        ["orange", 20000, 8]
+    ]
+    while (true) {
+        let menu = parseInt(prompt(`apa yang ingin anda lakukan :
+1. menampilkan daftar buah
+2. menambah buah
+3. menghapus buah
+4. membeli buah
+5. Exit`
+        )
+        );
+        if (menu == 1) {
+            let fruitlist = `Daftar buah\n\n`
+
+            for (let i = 0; i < fruits.length; i++) {
+                fruitlist += `${i}.${fruits[i][0]} || Rp.${fruits[i][1]} || ${fruits[i][2]}\n`
+            }
+            alert(fruitlist)
+        } else if (menu == 2) {
+            let newName = prompt("masukan nama buah :");
+            let newPrice = parseInt(prompt("masukan jumlah harga satuan :"));
+            let newStock = parseInt(prompt("masukan jumlah stock buah :"));
+
+            let newFruit = [newName, newPrice, newStock]
+
+            fruits.push(newFruit)
+
+            let fruitlist = `Daftar buah\n\n`
+
+            for (let i = 0; i < fruits.length; i++) {
+                fruitlist += `${i}.${fruits[i][0]} || Rp.${fruits[i][1]} || ${fruits[1][2]}\n`
+            }
+            alert(fruitlist)
+        
+        } 
+        
+        else if (menu == 3) {
+            let fruitlist = `menghapus buah\n\n`;
+            for (let i = 0; i < fruits.length; i++) {
+                fruitlist += `${i}.${fruits[i][0]} || Rp.${fruits[i][1]} || ${fruits[i][2]}\n`
+            }
+        let selindex = parseInt(prompt(fruitlist));
+        
+
+            fruits.splice(selindex, 1);
+
+            // let fruitlist = `Daftar Buah\n\n`
+            for (let i = 0; i < fruits.length; i++) {
+                fruitlist += `${i}.${fruits[i][0]} || Rp.${fruits[i][1]} || ${fruits[i][2]}\n`
+            } alert(fruitlist)
+        }
+
+
+
+        
+    }
+
+</script>

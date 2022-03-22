@@ -1,0 +1,73 @@
+<script>
+    // let angka_a = Number(prompt("masukan angka pertama :"))
+    // if (Number.isInteger(angka_a / 2)) {
+    //     alert`${angka_a} adalah angka genap`;
+    // } else {
+    //     alert`${angka_a} adalah angka ganjil`;
+    // }
+    // let angka_b = Number(prompt("masukan angka kedua :"))
+    // if (Number.isInteger(angka_b / 2)) {
+    //     alert`${angka_b} adalah angka genap`;
+    // } else {
+    //     alert`${angka_b} adalah angka ganjil`;
+    // }
+    //  melihat angka ganjil atau genap
+    // polindrome kata di balik masih sama dengan awalnya
+
+
+    // string no reverse kalau mau direverse butuh array
+    // string split (seperator) untuk merubah menjadi data array
+    // string ==> malam == split ==> Array [m,a,l,a,m]
+
+    // let polin = prompt("check for palindrome:")
+
+    // // if(polin.split('').reverse().join('').toLowercase() == polin.toLowercase()){
+    // //     alert(`kata ${polin} ini ✅ polindrome ${polin.split('').reverse().join('')}`);
+    // // } else {
+    // //     alert(`kata ${polin} ini bukan ❌polindrom ${polin.split('').reverse().join('')}`);
+    // // }
+
+    // let polin_reverse = '';
+    // for (let i= polin.legth; i >= 0; i--) {
+    //     console.log(`alamat index string huruf : ${i}` , polin.charAt(i))
+    //     polin_reverse += polin.charAt(i)
+    // }
+    // if(polin_reverse.toLowercase() == polin.toLowercase()){
+    //     alert(`kata ${polin} ini ✅ polindrome ${polin_reverse}`)
+    // } else {   
+    //     alert(`kata ${polin} ini bukan ❌polindrom ${polin_reverse}`);
+    // }
+
+    // let text = "aku seorang Progammer"
+    // let lowcase = ""
+    // for (let i = 0; i < text.legth; i++) {
+    //     if (i == 0) {
+    //        lowcase += text,charAt(i),toUppercase
+    //     } else if (text.charAt(i - 1) == ' '){
+
+    //     } else {
+    //        alert lowcase += text.charAt(i).toLowercase()
+    //     } 
+
+    // }
+    let kata = prompt("masukan kalimat");
+    // function vowel ()
+let vokal = "";
+for (let i = 0; i <= kata.length; i++)
+        //mengecek apakah huruf pada index i berupa huruf
+    if (kata.charAt(i).toLowerCase() == 'a' || kata.charAt(i).toLowerCase() == 'i' || kata.charAt(i).toLowerCase() == 'u' || kata.charAt(i).toLowerCase() == 'e' || kata.charAt(i).toLowerCase() == 'o')
+            //mengecek variable penampung huruf vokal apakah memliki huruf vokal yang terdeteksi
+        if (!vokal.includes(kata.charAt(i).toLowerCase())) { // tanda ! menandakan reverse value alawnya true ==> false
+                //jika huruf vokal yang terdeteksi tidak ada pada variable penampung, maka huruf tersebut ditambahkan.
+                vokal += kata.charAt(i).toLoweCase;
+         
+            }
+
+
+alert(`
+kalimat = ${kata}
+huruf Vokal = ${vokal}
+jumlah jenis huruf = ${vokal}`);
+
+
+</SCRIPT>

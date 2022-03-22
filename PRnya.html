@@ -1,0 +1,24 @@
+<script> // Part one
+let konfirmasi = true;
+alert("mari menghitung")
+
+// // 1.menambah fitur : mendeteksi input data
+// //number itu untuk memastikan semua nya angka unlike parseInt yang hanya membaca depan
+  let angka_a = Number(prompt("masukan angka pertama :"))
+  let angka_b = Number(prompt("masukan angka kedua :"))
+  if (Number.isInteger(angka_a, angka_b)) {
+    alert(`hasil perhitungan:
+  1.pertambahan ${angka_a} + ${angka_b} = ${angka_a + angka_b}
+  2.Pengurangan ${angka_a} - ${angka_b} = ${angka_a - angka_b}
+  3.perkalian ${angka_a} * ${angka_b} = ${angka_a * angka_b}
+  4.pembagian ${angka_a} / ${angka_b} = ${angka_a / angka_b}`)
+  }
+  else
+    alert("Input Anda Salah ❌")
+
+  konfirmasi = confirm("Mau lanjut Menghitung lagi?")
+
+ 
+
+
+</SCRIPT>

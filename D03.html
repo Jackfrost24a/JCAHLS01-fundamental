@@ -1,0 +1,46 @@
+<script>
+    let database = ["Apel", "Semangka"];
+    let konfirmasi = true;
+
+    const printData = () => {
+        return database.map((value, idx) => {
+            return `${idx + 1}. ${value}`
+        }).join("\n") //this way prefered
+
+
+       
+
+    }
+
+    while (konfirmasi) {
+        let menu = parseInt(prompt(`Menu data buah :
+    1. Lihat data
+    2. Tambah data
+    3. Hapus data
+    4. Edit data`))
+
+
+        if (menu == "1") {
+            alert(`List data :\n${printData()}`)
+
+        }
+        else if (menu == "2") {
+            let newData = prompt("masukan data baru");
+            database.push(newData)
+        }
+        else if (menu == "3") {
+            let no = parseInt(prompt(" Pilih Data yang akan dihapus"))
+            database.splice(no - 1, 1)
+
+        } else if (menu == "4") {
+            let no = parseInt(prompt(" Pilih Data yang akan dihapus"))
+            let editData = prompt("Silahkan Edit Data");
+            database[no - 1] = editData;
+        } else {
+            alert("menu yang anda cari tidak ada ⚠")
+
+        }
+    }
+
+
+</script>

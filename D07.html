@@ -1,0 +1,138 @@
+<script>
+    class Database {
+        constructor(_name, _stock, _price,) {
+            this.name = _name
+            this.stock = _stock
+            this.price = _price
+
+        }
+    }
+    getInfo = (numb, expDate = null) => {
+        if (expDate) {
+            return `${numb}, ${this.name} stoknya ${this.stock} ${this.harga.tolocalstring()}, ${expDate}`
+        }else {
+        return `${numb}, ${this.name} stoknya ${this.stock} ${this.harga.tolocalstring()}`
+    }
+    }
+
+    class FNB extends Database {
+        constructor(_name, _stock, _price, _type, _expDate) {
+            super(_name, _stock, _price);
+            this.type = _type;
+            this.Expired = _Expired;
+
+        }
+
+    }
+
+
+
+    let database = []
+
+
+    let konfirmasi = true;
+
+
+    let printData = () => {
+        return database.map((value, idx) => {
+            return `${index + 1}.` + (value.expDate)
+        })
+
+        return list.join("\n") //this way prefered
+
+
+
+
+
+
+    }
+
+    while (konfirmasi) {
+        let menu = parseInt(prompt(`Menu data buah :
+    1. Lihat Stock
+    2. Beli Produk
+    3. Tambah Produk`
+        ))
+
+
+        if (menu == "1") {
+            alert(`List data :\n${printData()}`)
+
+
+
+
+        } else if (menu == "2") {
+
+
+            while (true) {
+
+                let sellIndex = parseInt(prompt(printData(database, " Pilih barang yang akan di beli")))
+                let { name, stock, price } = database[sellIndex - 1]
+
+
+                let stock2 = parseInt(prompt("masukan quantity anda: ")
+                );
+                if (stock2 > stock) {
+                    alert(`stock tidak mencukupi`)
+                }
+                else if (stock2 <= stock) {
+                    let bayar = prompt(`harga anda adalah: IDR ${stock2 * price}
+                                    input nominal anda:`)
+                    if (bayar < price) {
+                        alert(`uang tidak mencukupi`)
+                    }
+                    else if (bayar > price) {
+                        alert(`kembalian anda ${bayar - price}`)
+                        database[sellIndex - 1].stock = database[sellIndex - 1].stock - stock2
+                        break
+                    } else {
+                        alert(`terimakasih telah berbelanja`)
+                        database[sellIndex - 1].stock = database[sellIndex - 1].stock - stock2
+
+                    }
+
+                }
+
+
+            }
+
+
+        } else if (menu == "3") {
+            let Opt = parseInt(
+                prompt(`Kategori yang ingin ditambahkan:\n
+            1. FNB
+            2.non FNB`)
+            )
+
+
+            let name = prompt("masukan data baru")
+            let stock = parseInt(prompt("masukan stock"))
+            let price = parseInt(prompt("masukan harga baru"))
+            if (Opt == 1) {
+                let Type = prompt(`masukan tipe FNB`)
+                let Expired = prompt(`masukan waktu expired`)
+                alert(`barang telah tersimpan`)
+                database.push({ name, price, stock, Type, Expired })
+
+
+            }
+            else {
+                alert(`barang telah tersimpan`)
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+
+
+</script>

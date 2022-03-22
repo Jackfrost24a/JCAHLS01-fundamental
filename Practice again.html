@@ -1,0 +1,50 @@
+<script>
+    var Data = [["mobil"],
+    ["motor"]]
+    
+
+    while (true) {
+        var menu = parseInt(prompt(`silahkan pilih data:
+    1 Melihat Data
+    2.Menambah Data
+    3.Mengurangi Data.`))
+        if (menu == 1) {
+            var Daftar = `melihat data\n\n`
+            for (var i = 0; i < Data.length; i++) {
+                Daftar += `${i}.${Data[i][0]}\n`
+            }
+            alert(Daftar)
+
+        } else if (menu == 2) {
+            var newName = prompt("masukan nama barang")
+            var newBarang = [newName]
+            Data.push(newBarang)
+            var Daftar = `melihat data\n\n`
+            for (var i = 0; i < Data.length; i++) {
+                Daftar += `${i}.${Data[i][0]}\n`
+            }
+            alert(Daftar)
+
+
+        } else if (menu = 3) {
+            var Daftar = `mengurangi data\n\n`
+            for (var i = 0; i < Data.length; i++) {
+                Daftar += `${i}.${Data[i][0]}\n`
+            }
+            var selindex = parseInt(prompt(Daftar))
+
+            Data.splice(selindex, 1)
+
+            var Daftar = `Daftar data\n\n`
+            for (var i = 0; i < Data.length; i++) {
+                Daftar += `${i}.${Data[i][0]}\n`
+            }
+    
+            alert(Daftar)
+
+    
+            
+            
+        }
+    }
+</script>
