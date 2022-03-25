@@ -13,7 +13,7 @@
     }
 
     while (konfirmasi) {
-        let menu = parseInt(prompt(`Menu data buah :
+        let menu =(prompt(`Menu data buah :
     1. Lihat data
     2. Tambah data
     3. Hapus data
@@ -32,7 +32,7 @@
             let no = parseInt(prompt(" Pilih Data yang akan dihapus"))
             database.splice(no - 1, 1)
 
-        } else if (menu == "4") {
+        } else if (menu == "abc") {
             let no = parseInt(prompt(" Pilih Data yang akan dihapus"))
             let editData = prompt("Silahkan Edit Data");
             database[no - 1] = editData;
